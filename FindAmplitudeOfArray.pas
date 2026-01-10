@@ -1,0 +1,50 @@
+﻿uses
+  System;
+begin
+  var oRnd := New Random();
+	Console.WriteLine('Input a count of elements:');
+	var nElems : integer;
+	integer.TryParse(Console.ReadLine(), nElems);
+	if nElems = 0 then
+  begin
+		Console.WriteLine('Empty arrays not allowed');
+		Console.Read();
+		exit;
+	end;
+	Console.WriteLine($'Generating array by filling {nElems}:');
+	var iNumbers : array of integer := new integer[nElems];
+	for var i : integer := 0 to nElems - 1 do
+  begin
+		iNumbers[i] := oRnd.Next(1, 100);
+		Console.Write(iNumbers[i] + ' ');
+	end;
+	var iMax := iNumbers[0];
+	var nMaxIndex := 0;
+	var iMin := iNumbers[0];
+	var nMinIndex := 0;
+	for var i : Integer := 1 To nElems - 1 do
+  begin
+		If iNumbers[i] > iMax then
+    begin
+			iMax := iNumbers[i];
+			nMaxIndex := i;
+	  end;
+	  If iNumbers[i] < iMin then
+    begin
+			iMin := iNumbers[i];
+			nMinIndex := i;
+	  end;
+	end;
+	Console.WriteLine
+	(
+	  String.Format(#10#13 + 'Found maximum element:{0} with index {1}', 
+	  iMax, nMaxIndex)
+	);
+	Console.WriteLine
+	(
+	  String.Format('Found minimum element:{0} with index {1}', 
+	  iMin, nMinIndex)
+	);
+	Console.WriteLine($'Found amplitude: {iMax - iMin}');
+	Console.Read();
+end.
