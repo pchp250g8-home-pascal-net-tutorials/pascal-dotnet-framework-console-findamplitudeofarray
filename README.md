@@ -1,4 +1,4 @@
-FindAmplitudeOfArray. Pascal Tutorials. Platform DotNet FrameWork. Arrays. Algorithms. Simple Input/Output. Console Application. 
+FindAmplitudeOfArray. Pascal Tutorials. Platform DotNet FrameWork. Arrays. Algorithms. Simple Input/Output. Console Application.
 A console application in the Pascal programming language. 
 The program does the following:
    1. Prompts the user for the number of elements in the array.
